@@ -17,6 +17,7 @@ pipeline {
          stage('Deliver for development') {
             when {
                 branch 'development'
+            }
             steps {
               
                 bat '"C:\\Program Files\\Git\\bin\\bash.exe"  ./jenkins/scripts/deliver-for-development.sh'
@@ -45,3 +46,4 @@ pipeline {
         }
     }
 }
+      
