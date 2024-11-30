@@ -11,10 +11,10 @@ pipeline {
         }
         stage('Test'){
             steps {
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" ./jenkins/scripts/test.sh'
+               bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "chmod +x ./jenkins/scripts/test.sh && ./jenkins/scripts/test.sh"'
             }
         }
-         stage('Deliver for development') {
+        stage('Deliver for development') {
             when {
                 branch 'development'
             }
